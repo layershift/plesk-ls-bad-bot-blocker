@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+  <id>ls-bad-bot-blocker</id>
+  <name>Bad Bot Blocker</name>
+  <description>Block bad bots using nginx-ultimate-bad-bot-blocker</description>
+  <version>1.0</version>
+  <release>40</release>
+  <vendor>Layershift</vendor>
+  <url>https://www.layershift.com</url>
+  <plesk_min_version>18.0.50</plesk_min_version>
+  <os>unix</os>
+  <category>webserver</category>
+</module>
