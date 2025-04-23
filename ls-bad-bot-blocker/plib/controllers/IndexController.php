@@ -5,12 +5,11 @@ class IndexController extends pm_Controller_Action
 {
     protected $_accessLevel = 'admin';
 
-    public function indexAction() {
-        $this->view->list = $this->getList();
-        $this->view->tabs = [ [
+    private function _getTabs($setActiveTab=-1) {
+        return[ [
             'title' => $this->lmsg('lsBadBotBlockerList'),
             'action' => 'index',
-            'active' => true,
+            'active' => ( $setActiveTab==1 ? true : false),
         ], [
             'title' => $this->lmsg('lsBadBotBlockerEnableAll'),
             'action' => 'enableall',
@@ -19,7 +18,17 @@ class IndexController extends pm_Controller_Action
             'title' => $this->lmsg('lsBadBotBlockerDisableAll'),
             'action' => 'disableall',
             'active' => false,
-        ] ];
+        ], [
+            'title' => $this->lmsg('lsBadBotBlockerTools'),
+            'action' => 'tools',
+            'active' => ( $setActiveTab==4 ? true : false),
+        ]  ];
+
+    }
+
+    public function indexAction() {
+        $this->view->list = $this->getList();
+        $this->view->tabs = $this->_getTabs(1);
     }
 
     public function indexDataAction() {
