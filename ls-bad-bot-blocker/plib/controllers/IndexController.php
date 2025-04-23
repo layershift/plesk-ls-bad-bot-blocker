@@ -80,14 +80,20 @@ class IndexController extends pm_Controller_Action
         $list->setColumns([
             'name' => [
                 'title' => $this->lmsg('lsBadBotBlockerDomainName'),
+                'searchable' => true,
+                'sortable' => true,
             ],
             'status' => [
                 'title' => $this->lmsg('lsBadBotBlockerStatus'),
                 'noEscape' => true,
+                'searchable' => false,
+                'sortable' => true,
             ],
             'link' => [
                 'title' => $this->lmsg('lsBadBotBlockerAction'),
                 'noEscape' => true,
+                'searchable' => false,
+                'sortable' => true,
             ]
         ]);
         $list->setDataUrl(['action' => 'index-data']);
