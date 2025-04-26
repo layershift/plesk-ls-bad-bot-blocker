@@ -1,7 +1,8 @@
-<?php if (isset($this->debug)) { echo '<pre>';var_dump($this->debug); echo '</pre>'; } ?>
 <?php if ($this->tabs) echo $this->renderTabs($this->tabs) ?>
-<?php echo $this->renderList($this->list); ?>
-<p><a href="javascript:checkData()">Check blocked requests</a></p>
+<legend><?php if ($this->domainList) echo $this->domainList;?><a href="<?php echo $this->backLink; ?>"><?php echo $this->domainName; ?></a></legend>
+<p><?php echo $this->lmsg('domain.description'); ?></p>
+<p>Bad Bot Blocker is <b><?php echo $this->currentStatus; ?></b>&nbsp;&nbsp;&nbsp;<?php echo $this->link_; ?></p>
+<p><a href="javascript:checkData()"><?php echo $this->lmsg('domain.checkBlockedRequests'); ?></a></p>
 <div id="logdata" style="white-space: pre; font-family: monospace;"></div>
 <script>
 //    Jsw.onReady(function() {
@@ -23,7 +24,7 @@
             $('logdata').innerHTML="";
             new Ajax.Request('<?php echo pm_Context::getActionUrl('index', 'check-domain') ?>', {
                     method: 'get',
-                    parameters: {  },
+                    parameters: { dom_id:<?php echo $this->dom_id;?>, site_id:<?php echo $this->site_id; ?> },
                     onCreate: function() {
                         inProgress = true;
                     },

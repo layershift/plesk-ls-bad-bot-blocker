@@ -18,4 +18,16 @@ $messages = array(
     'lsBadBotBlockerDomainName' => 'Domain name',
     'lsBadBotBlockerStatus' => 'Status',
     'lsBadBotBlockerAction' => 'Operations',
+
+    'domain' => [
+        'description' => 'Nginx Block Bad Bots, Spam Referrer Blocker, Vulnerability Scanners, User-Agents, Malware, Adware, Ransomware, Malicious Sites, with anti-DDOS, Wordpress Theme Detector Blocking ',
+        'checkBlockedRequests' => 'Check blocked requests',
+        'blocked' => 'Blocked',
+        'requests' => 'requests',
+        'between' => 'Between',
+        'and' => 'and',
+        'numBlockedRequests' => '# blocked requests',
+        'userAgent' => 'User-Agent',
+        'noBlockedRequestsToday' => 'There were no blocked requests today',
+    ]
 );
